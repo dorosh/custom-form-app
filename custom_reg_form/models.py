@@ -11,20 +11,6 @@ class ExtraInfo(models.Model):
     The form that wraps this model is in the forms.py file.
     """
     user = models.OneToOneField(USER_MODEL, null=True)
-    FAVORITE_EDITOR = (
-        ('vim', 'Vim'),
-        ('emacs', 'Emacs'),
-        ('np', 'Notepad'),
-        ('cat', 'cat > filename'),
-    )
-
-    favorite_movie = models.CharField(
-        verbose_name="Fav Flick",
-        max_length=100,
-    )
-    favorite_editor = models.CharField(
-        verbose_name="Favorite Editor",
-        choices=FAVORITE_EDITOR,
-        blank=True, 
-        max_length=5,
-    )
+    company_name = models.CharField(max_length=255)
+    position = models.CharField(max_length=255)
+    work_email = models.EmailField(max_length=255)
